@@ -1,6 +1,7 @@
 from board import Board
 from Game import Game
 import random
+import pyautogui
 
 initial_state = []
 target_state = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]

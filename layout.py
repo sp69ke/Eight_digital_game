@@ -13,8 +13,8 @@ FONT_NAME = 'Arial'
 
 class Layout:
     def __init__(self):
-        self.cell_width = 100
-        self.cell_height = 100
+        self.cell_width = 200
+        self.cell_height = 200
         self.board_width = self.cell_width * 3
         self.board_height = self.cell_height * 3
 
