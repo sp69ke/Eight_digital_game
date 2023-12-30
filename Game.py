@@ -10,7 +10,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.fps = 30
 
-    def start(self):
+    def start():
         # 主循环
         layout = Layout()
 
