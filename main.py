@@ -39,5 +39,4 @@ def main():
     game.run()
 
 
-# if __name__ == "main":
 main()
