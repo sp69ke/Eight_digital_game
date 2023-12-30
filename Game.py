@@ -1,4 +1,5 @@
 import pygame
+from layout import Layout
 
 
 class Game:
@@ -7,11 +8,11 @@ class Game:
 
         self.window_size = (320, 320)
         self.surface = pygame.display.set_mode(self.window_size)
+        pygame.display.set_caption("Eight Puzzle Game")
         self.clock = pygame.time.Clock()
         self.fps = 30
 
-    def start():
-        # 主循环
+    def start(self):
         layout = Layout()
 
         running = True
