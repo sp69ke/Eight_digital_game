@@ -1,6 +1,7 @@
 import pygame
 from board import Board
 from layout import Layout
+import sys
 
 
 class Game:
@@ -9,6 +10,7 @@ class Game:
         self.target_state = target_state
         self.layout = Layout()
         self.screen = pygame.display.set_mode((self.layout.board_width, self.layout.board_height + 100))
+        self.running = 1
         pygame.display.set_caption("Eight Puzzle")
 
     def handle_input(self):
@@ -29,6 +31,9 @@ class Game:
                     clicked_row = mouse_pos[1] // self.layout.cell_height
                     clicked_col = mouse_pos[0] // self.layout.cell_width
                     self.board.move_to_blank(clicked_row, clicked_col)
+            elif event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
     def draw(self):
         # 绘制游戏界面
@@ -43,9 +48,10 @@ class Game:
         pygame.init()
         clock = pygame.time.Clock()
 
-        while not self.board.is_solved(self.target_state):
+        while self.running:
             self.handle_input()
             self.draw()
             clock.tick(60)
+            self.running = self.board.is_solved(self.target_state)
 
         pygame.quit()
