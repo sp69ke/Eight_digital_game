@@ -52,6 +52,5 @@ class Game:
             self.handle_input()
             self.draw()
             clock.tick(60)
-            self.running = not(self.board.is_solved(self.target_state))
 
         pygame.quit()
