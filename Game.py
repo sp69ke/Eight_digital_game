@@ -1,4 +1,5 @@
 import pygame
+from layout import *
 
 
 class Game:
@@ -10,7 +11,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.fps = 30
 
-    def start():
+    def start(self):
         # 主循环
         layout = Layout()
 
@@ -20,7 +21,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     running = False
 
-            self.surface.fill((0, 0, 0))
+            self.surface.fill((255, 255, 255))
             layout.draw(self.surface)
 
             pygame.display.flip()

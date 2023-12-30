@@ -1,4 +1,5 @@
 import pygame
+from board import *
 
 
 class Layout:

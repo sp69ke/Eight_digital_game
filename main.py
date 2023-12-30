@@ -1,4 +1,5 @@
 from Game import *
 
 if __name__ == "__main__":
-    Game.start()
+    game = Game()
+    game.start()
