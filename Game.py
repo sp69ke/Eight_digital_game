@@ -10,7 +10,7 @@ class Game:
         self.target_state = target_state
         self.layout = Layout()
         self.screen = pygame.display.set_mode((self.layout.board_width, self.layout.board_height + 100))
-        self.running = 1
+        self.running = True
         pygame.display.set_caption("Eight Puzzle")
 
     def handle_input(self):
@@ -52,6 +52,6 @@ class Game:
             self.handle_input()
             self.draw()
             clock.tick(60)
-            self.running = self.board.is_solved(self.target_state)
+            self.running = not(self.board.is_solved(self.target_state))
 
         pygame.quit()
