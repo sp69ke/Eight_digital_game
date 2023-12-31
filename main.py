@@ -1,6 +1,7 @@
 from board import Board
 from Game import Game
 import random
+import pyautogui
 
 initial_state = []
 target_state = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
@@ -30,6 +31,7 @@ def makeBoard():
         for j in range(i * 3 - 3, i * 3):
             initial_state[i].append(random_list[j])
     print(initial_state)
+    print(isValid(random_list, target_state_list))
 
 
 def main():
@@ -40,3 +42,8 @@ def main():
 
 
 main()
+
+'''
+pyinstaller main.py -p board.py -p Game.py -p layout.py -p solve.py --hidden-import numpy --hidden-import pyautogui --hidden-import pygame -F
+以上为一整条命令 
+'''

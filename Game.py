@@ -1,5 +1,4 @@
 import pygame
-from board import Board
 from layout import Layout
 import sys
 
@@ -16,21 +15,17 @@ class Game:
     def handle_input(self):
         # 处理键盘输入和鼠标点击事件
         for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_UP:
-                    self.board.move('up')
-                elif event.key == pygame.K_DOWN:
-                    self.board.move('down')
-                elif event.key == pygame.K_LEFT:
-                    self.board.move('left')
-                elif event.key == pygame.K_RIGHT:
-                    self.board.move('right')
-            elif event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  # 左键点击
                     mouse_pos = pygame.mouse.get_pos()
                     clicked_row = mouse_pos[1] // self.layout.cell_height
                     clicked_col = mouse_pos[0] // self.layout.cell_width
                     self.board.move_to_blank(clicked_row, clicked_col)
+                    print(self.board.state)
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_a:
+                    print(self.board.state)
+                    self.board.auto_move()
             elif event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()

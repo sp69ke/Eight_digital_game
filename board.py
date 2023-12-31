@@ -1,3 +1,7 @@
+from solve import Astar
+import numpy as np
+
+
 def is_valid_move(row, col, blank_row, blank_col):
     # 检查指定位置的格子是否可以移动到空白格子的位置
     if (row == blank_row and abs(col - blank_col) == 1) or \
@@ -38,3 +42,11 @@ class Board:
             for col in range(self.size):
                 if self.state[row][col] == 0:
                     return row, col
+
+    def auto_move(self):
+        # start_data = self.state
+        end_data = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+        # a_star = A_star(start_data, end_data)
+        # result_table = a_star.solve()
+        # self.state = result_table[1]
+        # print(self.state)
