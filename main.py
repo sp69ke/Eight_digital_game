@@ -31,6 +31,7 @@ def makeBoard():
         for j in range(i * 3 - 3, i * 3):
             initial_state[i].append(random_list[j])
     print(initial_state)
+    print(isValid(random_list, target_state_list))
 
 
 def main():
