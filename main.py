@@ -44,6 +44,6 @@ def main():
 main()
 
 '''
-pyinstaller main.py -p board.py -p Game.py -p layout.py -p solve.py --hidden-import numpy --hidden-import pyautogui --hidden-import pygame 
+pyinstaller main.py -p board.py -p Game.py -p layout.py -p solve.py --hidden-import numpy --hidden-import pyautogui --hidden-import pygame -F
 以上为一整条命令 
 '''
