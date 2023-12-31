@@ -22,7 +22,7 @@ def makeBoard():
         return sum1 // 2 == sum2 // 2
 
     random_list = random.sample(range(0, 9), 9)
-    print(random_list)
+    # print(random_list)
     while not isValid(random_list, target_state_list):
         random_list = random.sample(range(0, 9), 9)
 
@@ -30,8 +30,8 @@ def makeBoard():
         initial_state.append([])
         for j in range(i * 3 - 3, i * 3):
             initial_state[i].append(random_list[j])
-    print(initial_state)
-    print(isValid(random_list, target_state_list))
+    # print(initial_state)
+    # print(isValid(random_list, target_state_list))
 
 
 def main():
