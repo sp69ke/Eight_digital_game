@@ -21,9 +21,10 @@ class Game:
                     clicked_row = mouse_pos[1] // self.layout.cell_height
                     clicked_col = mouse_pos[0] // self.layout.cell_width
                     self.board.move_to_blank(clicked_row, clicked_col)
+                    print(self.board.state)
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_a:
-                    print(1)
+                    print(self.board.state)
                     self.board.auto_move()
             elif event.type == pygame.QUIT:
                 pygame.quit()

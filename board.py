@@ -1,4 +1,4 @@
-from solve import A_star
+from solve import Astar
 import numpy as np
 
 
@@ -44,9 +44,9 @@ class Board:
                     return row, col
 
     def auto_move(self):
-        start_data = self.state
+        # start_data = self.state
         end_data = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
-        a_star = A_star(start_data, end_data)
-        result_table = a_star.solve()
-        self.state = result_table[1]
-        print(self.state)
+        # a_star = A_star(start_data, end_data)
+        # result_table = a_star.solve()
+        # self.state = result_table[1]
+        # print(self.state)
